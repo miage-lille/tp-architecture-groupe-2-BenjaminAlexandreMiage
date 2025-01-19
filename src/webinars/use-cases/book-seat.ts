@@ -55,6 +55,8 @@ export class BookSeat implements Executable<Request, Response> {
     });
 
     await this.participationRepository.save(participation);
+    web.addUser();
+    await this.webinarRepository.create(web);
     
     //On récupère l'organisateur 
     const orga = await this.userRepository.findById(web.props.organizerId);

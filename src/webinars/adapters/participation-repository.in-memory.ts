@@ -13,8 +13,9 @@ export class InMemoryParticipationRepository implements IParticipationRepository
         this.database.push(participation);
     }
 
-    async getDataBase(): Promise<Participation[]>{
+    async getDataBase(): Promise<Participation[]> {
         return this.database;
-    }  
+    }
+     
     
 } 
